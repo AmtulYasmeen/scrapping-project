@@ -19,7 +19,7 @@ browser=webdriver.Chrome(executable_path = path_to_chrome)
 # create variables to store the fetched data in list and dictionary
 angel_all={}
 comp_location=[]
-gov_industry=[]
+industry=[]
 # url='http://www.morningstar.com/stocks/xnas/msft/quote.html'
 i=0
 # open a webpage using selenium python
@@ -49,10 +49,10 @@ for loc in all_comp_loc:
 	# loc_href=(loc.get_attribute('href'))
 	loc_text=(loc.text)
 	# comp_location.append(loc_href)
-	gov_industry.append(loc_text)
+	industry.append(loc_text)
 
 # update the list into a dictionary
-angel_all.update({'value': gov_industry})
+angel_all.update({'value': industry})
 # get the dictionary in a dataframe format using pandas
 df= pd.DataFrame(angel_all)
 # drop duplicates
